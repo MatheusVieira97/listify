@@ -28,6 +28,7 @@
         }
 
         &-name {
+            @include mixins.flex-start;
             color: variables.$secondary-text-color;
             font-size: variables.$font-medium;
             font-weight: 400;
