@@ -1,0 +1,9 @@
+@use '../../styles/mixins.scss';
+
+.cards {
+
+    .cards__row {
+        @include mixins.flex-center;
+    }
+    
+}
