@@ -1,5 +1,39 @@
 @use '../../styles/mixins.scss';
+@use '../../styles/variables.scss';
 
 .header {
     @include mixins.flex-start;
+    @include mixins.box-shadow;
+    background-color: variables.$secondary-background-color;
+    min-height: 76px;
+
+    &__logo {
+        max-width: 63px;
+        max-height: 63px;
+        margin-left: 8px;
+    }
+
+    &__title {
+        @include mixins.flex-start(column);
+        align-items: flex-start;
+        padding-left: 7px;
+
+        &-app {
+            color: variables.$text-color;
+            font-size: variables.$font-xl;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+        }
+
+        &-name {
+            color: variables.$secondary-text-color;
+            font-size: variables.$font-medium;
+            font-weight: 400;
+            font-style: italic;
+            margin: 0;
+            padding: 0;
+        }
+    }
 }

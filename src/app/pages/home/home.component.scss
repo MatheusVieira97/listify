@@ -1,0 +1,83 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/variables.scss';
+
+:host {
+    background-color: variables.$background-color;
+    display: block;
+    min-height: 100vh;
+}
+
+.search {
+    @include mixins.flex-center;
+    padding: 2.3rem;
+
+
+    &__container {
+        @include mixins.flex-center;
+        background-color: variables.$secondary-background-color;
+        border: 1px solid variables.$border-color;
+        border-radius: variables.$button-radius;
+
+        &:focus {
+            border-color: variables.$focus-color;
+        }
+
+        &:hover {
+            border-color: variables.$hover-color;
+        }
+    }
+
+    &__input {
+        min-width: 900px;
+        padding: 1rem;
+        font-size: 1rem;
+        border: none;
+        outline: none;
+        border-radius: variables.$button-radius;
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+        }
+
+        &:focus {
+            border-color: none;
+            outline: none;
+        }
+
+        &:hover {
+            border-color: none;
+        }
+    }
+
+    &__button {
+        background-color: variables.$secondary-background-color;
+        border-left: 2px solid variables.$border-color;
+        border-top-right-radius: variables.$button-radius;
+        border-bottom-right-radius: variables.$button-radius;
+        min-width: 50px;
+    
+        &:focus {
+            border-color: none;
+        }
+
+        &:hover {
+            border-color: none;
+        }
+    }
+
+    &__container:hover &__button {
+        border-left: 2px solid variables.$hover-color;
+    }
+
+    &__container:focus-within &__button {
+        border-left: 2px solid variables.$focus-color;
+    }
+
+    &__container:focus-within {
+        border-color: variables.$focus-color;
+    }
+
+    &__icon {
+        max-width: 32px;
+        max-height: 32px;
+    }
+}
