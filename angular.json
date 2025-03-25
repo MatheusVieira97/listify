@@ -32,7 +32,10 @@
               }
             ],
             "styles": [
-              "src/app/styles/styles.scss"
+              "src/styles.scss",
+              "src/app/styles/variables.scss",
+              "src/app/styles/mixins.scss",
+              "src/app/styles/globals.scss"
             ],
             "scripts": []
           },
@@ -91,7 +94,10 @@
               }
             ],
             "styles": [
-              "src/app/styles/styles.scss"
+              "src/styles.scss",
+              "src/app/styles/variables.scss",
+              "src/app/styles/mixins.scss", 
+              "src/app/styles/globals.scss"
             ],
             "scripts": []
           }
