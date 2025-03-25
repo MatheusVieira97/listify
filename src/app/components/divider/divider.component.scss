@@ -1,0 +1,23 @@
+@use "../../styles/variables.scss";
+
+.divider {
+    display: flex;
+    align-items: center;
+    width: auto;
+
+    hr {
+        background-color: variables.$secondary-text-color;
+        border: none;
+        height: 1px;
+    }
+
+    &__small {
+        margin: 5px;
+        min-width: 10px; 
+    }
+
+    &__medium {
+        margin: 5px;
+        min-width: 40px; 
+    }
+}
