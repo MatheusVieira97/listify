@@ -1,11 +1,11 @@
 export interface Card {
     title: string;
     description: string;
-    image: string;
+    img: string;
     type: CardType;
 }
 
-enum CardType {
+export enum CardType {
     Paisagem = 1,
     Flor = 2,  
     Pizza = 3   
