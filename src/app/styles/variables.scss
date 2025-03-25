@@ -1,0 +1,47 @@
+// Main Colors
+$primary-color: #007bff; 
+$secondary-color: #6c757d;  
+$danger-color: #dc3545;     
+$success-color: #28a745;    
+$warning-color: #ffc107;    
+$info-color: #17a2b8;       
+$background-color: #f8f9fa; 
+$text-color: #212529;       
+$border-color: #dee2e6;    
+
+// Font Sizes
+$font-xs: 12px;      
+$font-small: 14px;  
+$font-medium: 16px;  
+$font-large: 18px;   
+$font-xl: 20px;      
+
+// Spacing Scale
+$spacing-xs: 4px;     
+$spacing-small: 8px;  
+$spacing-medium: 16px; 
+$spacing-large: 24px; 
+$spacing-xl: 32px; 
+$spacing-xxl: 48px;  
+
+// Button Styles
+$button-padding: 10px 20px;
+$button-radius: 6px;
+$button-small-padding: 6px 12px;
+$button-large-padding: 12px 24px;
+
+// Transitions
+$transition-fast: 0.2s ease-in-out;
+$transition-normal: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+$shadow-md: 0 4px 6px rgba(0,0,0,0.15);
+$shadow-lg: 0 10px 15px rgba(0,0,0,0.20);
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
