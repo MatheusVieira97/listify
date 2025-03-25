@@ -9,16 +9,20 @@ $warning-color: #ffc107;
 $info-color: #17a2b8;      
  
 $background-color: #EFEFEF; 
+$secondary-background-color: #FFFF; 
 $text-color: #000300; 
 $secondary-text-color: #676767;
-$border-color: #EEEEF0;    
+$border-color: #d1d1d1;    
+$hover-color: #B5DBEA;    
+$focus-color: #3397DB;    
 
 // Font Sizes
 $font-xs: 0.75rem; 
 $font-small: 0.875rem;  
 $font-medium: 1rem;     
 $font-large: 1.125rem;  
-$font-xl: 1.25rem;      
+$font-xl: 1.28rem;      
+$font-xxl: 1.5rem;
 
 // Spacing Scale
 $spacing-xs: 4px;     
@@ -30,7 +34,7 @@ $spacing-xxl: 48px;
 
 // Button Styles
 $button-padding: 10px 20px;
-$button-radius: 6px;
+$button-radius: 8px;
 $button-small-padding: 6px 12px;
 $button-large-padding: 12px 24px;
 
