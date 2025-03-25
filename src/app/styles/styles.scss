@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import './variables.scss';
-@import './mixins.scss';
-@import './globals.scss';
+@use 'variables';
+@use 'mixins';
+@use 'globals';
 
