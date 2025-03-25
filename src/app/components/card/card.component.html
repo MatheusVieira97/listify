@@ -1,0 +1,15 @@
+<div class="card">
+    <button class="card__delete-btn" aria-label="Excluir card">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    
+    <div class="card__image">
+        <img [src]="card.img" [alt]="card.title">
+        <span class="card__badge">{{CardType[card.type]}}</span>
+    </div>
+
+    <div class="card__content">
+        <h3 class="card__title">{{card.title}}</h3>
+        <p class="card__description">{{card.description}}</p>
+    </div>
+</div>
