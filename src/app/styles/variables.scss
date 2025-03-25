@@ -1,20 +1,24 @@
 // Main Colors
-$primary-color: #007bff; 
-$secondary-color: #6c757d;  
+$primary-color: #015CFF; 
+$secondary-color: #FD0047;
+$tertiary-color: #FFD700;
+
 $danger-color: #dc3545;     
 $success-color: #28a745;    
-$warning-color: #ffc107;    
-$info-color: #17a2b8;       
-$background-color: #f8f9fa; 
-$text-color: #212529;       
-$border-color: #dee2e6;    
+$warning-color: #ffc107; 
+$info-color: #17a2b8;      
+ 
+$background-color: #EFEFEF; 
+$text-color: #000300; 
+$secondary-text-color: #676767;
+$border-color: #EEEEF0;    
 
 // Font Sizes
-$font-xs: 12px;      
-$font-small: 14px;  
-$font-medium: 16px;  
-$font-large: 18px;   
-$font-xl: 20px;      
+$font-xs: 0.75rem; 
+$font-small: 0.875rem;  
+$font-medium: 1rem;     
+$font-large: 1.125rem;  
+$font-xl: 1.25rem;      
 
 // Spacing Scale
 $spacing-xs: 4px;     
@@ -41,7 +45,9 @@ $shadow-md: 0 4px 6px rgba(0,0,0,0.15);
 $shadow-lg: 0 10px 15px rgba(0,0,0,0.20);
 
 // Breakpoints
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
+$breakpoint-mobile-sm: 320px;
+$breakpoint-mobile-md: 481px;
+$breakpoint-tablet: 768px;
+$breakpoint-notebook: 1025px;
+$breakpoint-desktop: 1441px;
+$breakpoint-ultrawide: 1921px;
