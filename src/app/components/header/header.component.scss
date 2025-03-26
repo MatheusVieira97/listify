@@ -37,4 +37,73 @@
             padding: 0;
         }
     }
+
+    @media (max-width: variables.$breakpoint-mobile-sm) {
+        min-height: 60px;
+
+        &__logo {
+            max-width: 45px;
+            max-height: 45px;
+            margin-left: 5px;
+        }
+
+        &__title {
+            padding-left: 5px;
+
+            &-app {
+                font-size: variables.$font-medium;
+                letter-spacing: 0.5px;
+            }
+
+            &-name {
+                font-size: variables.$font-small;
+            }
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-mobile-sm) and (max-width: variables.$breakpoint-mobile-md) {
+        min-height: 68px;
+
+        &__logo {
+            max-width: 55px;
+            max-height: 55px;
+            margin-left: 6px;
+        }
+
+        &__title {
+            padding-left: 6px;
+
+            &-app {
+                font-size: variables.$font-large;
+                letter-spacing: 0.8px;
+            }
+
+            &-name {
+                font-size: variables.$font-medium-small;
+            }
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-ultrawide) {
+        min-height: 90px;
+
+        &__logo {
+            max-width: 75px;
+            max-height: 75px;
+            margin-left: 12px;
+        }
+
+        &__title {
+            padding-left: 10px;
+
+            &-app {
+                font-size: variables.$font-xxl;
+                letter-spacing: 1.2px;
+            }
+
+            &-name {
+                font-size: variables.$font-large;
+            }
+        }
+    }
 }
