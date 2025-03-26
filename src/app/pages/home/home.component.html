@@ -8,4 +8,4 @@
         </button>
     </div>
 </div>
-<app-card-list [cards]="filteredCards"></app-card-list>
+<app-card-list [cards]="filteredCards" (deleteCard)="onDeleteCard($event)"></app-card-list>

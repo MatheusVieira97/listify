@@ -17,6 +17,7 @@
         border: 1px solid variables.$border-color;
         border-radius: variables.$button-radius;
         position: relative;
+        width: 40%;
 
         &:focus {
             border-color: variables.$focus-color;
@@ -28,7 +29,7 @@
     }
 
     &__input {
-        min-width: 900px;
+        width: 100%;
         padding: 1rem;
         font-size: 1rem;
         border: none;
@@ -86,5 +87,78 @@
     &__icon {
         max-width: 32px;
         max-height: 32px;
+    }
+
+    @media (max-width: variables.$breakpoint-mobile-sm) {
+        padding: 1rem;
+
+        &__container {
+            max-width: 320px;
+            width: 90%;
+        }
+
+        &__input {
+            font-size: 0.875rem;
+            padding: 0.75rem;
+        }
+
+        &__button {
+            min-width: 40px;
+        }
+
+        &__icon {
+            max-width: 24px;
+            max-height: 24px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-mobile-sm) and (max-width: variables.$breakpoint-mobile-md) {
+        padding: 1.5rem;
+
+        &__container {
+            max-width: 450px;
+            width: 80%;
+        }
+
+        &__input {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-mobile-md) and (max-width: variables.$breakpoint-tablet) {
+        padding: 2rem;
+
+        &__container {
+            width: 80%;
+            max-width: 600px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-tablet) and (max-width: variables.$breakpoint-notebook) {
+        &__container {
+            width: 70%;
+            max-width: 800px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-notebook) and (max-width: variables.$breakpoint-desktop) {
+        &__container {
+            width: 50%;
+            max-width: 1000px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-desktop) and (max-width: variables.$breakpoint-ultrawide) {
+        &__container {
+            width: 40%;
+            max-width: 1200px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-ultrawide) {
+        &__container {
+            width: 40%;
+            max-width: 1400px;
+        }
     }
 }
