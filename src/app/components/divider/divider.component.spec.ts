@@ -18,4 +18,29 @@ describe('DividerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have default size as small', () => {
+    expect(component.size).toBe('small');
+  });
+
+  it('should set custom size when input is provided', () => {
+    component.size = 'medium';
+    fixture.detectChanges();
+    const hrElement = fixture.nativeElement.querySelector('hr');
+    expect(hrElement.className).toContain('divider__medium');
+  });
+
+  it('should render hr element with correct class based on size', () => {
+    const hrElement = fixture.nativeElement.querySelector('hr');
+    expect(hrElement.className).toContain('divider__small');
+    
+    component.size = 'medium';
+    fixture.detectChanges();
+    expect(hrElement.className).toContain('divider__medium');
+  });
+
+  it('should have proper CSS classes for divider container', () => {
+    const dividerElement = fixture.nativeElement.querySelector('.divider');
+    expect(dividerElement).toBeTruthy();
+  });
 });
