@@ -10,6 +10,7 @@
     border-radius: variables.$button-radius;
     overflow: visible;
     transition: transform 0.2s ease;
+    margin: 0.7em;
 
     &:hover {
         transform: scale(1.05);
@@ -99,5 +100,99 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    @media (max-width: variables.$breakpoint-mobile-sm) {
+        width: 12rem;
+        height: 20rem;
+
+        &__image {
+            height: 10rem;
+        }
+
+        &__content {
+            height: 10rem;
+            padding: calc(variables.$spacing-small / 2);
+        }
+
+        &__title {
+            font-size: variables.$font-large;
+        }
+
+        &__description {
+            font-size: variables.$font-small;
+            line-clamp: 6;
+            -webkit-line-clamp: 6;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-mobile-sm) and (max-width: variables.$breakpoint-mobile-md) {
+        width: 13rem;
+        height: 22rem;
+
+        &__image {
+            height: 11rem;
+        }
+
+        &__content {
+            height: 11rem;
+        }
+
+        &__title {
+            font-size: variables.$font-xl;
+        }
+
+        &__description {
+            font-size: variables.$font-medium;
+            line-clamp: 6;
+            -webkit-line-clamp: 6;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-mobile-md) and (max-width: variables.$breakpoint-tablet) {
+        width: 14rem;
+        height: 23rem;
+
+        &__image {
+            height: 11.5rem;
+        }
+
+        &__content {
+            height: 11.5rem;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-tablet) and (max-width: variables.$breakpoint-notebook) {
+        width: 15rem;
+        height: 25rem;
+
+        &__image {
+            height: 12.5rem;
+        }
+
+        &__content {
+            height: 12.5rem;
+        }
+    }
+    
+    @media (min-width: variables.$breakpoint-ultrawide) {
+        width: 18rem;
+        height: 28rem;
+
+        &__image {
+            height: 14rem;
+        }
+
+        &__content {
+            height: 14rem;
+        }
+
+        &__title {
+            font-size: calc(variables.$font-xxl * 1.2);
+        }
+
+        &__description {
+            font-size: variables.$font-large;
+        }
     }
 }
