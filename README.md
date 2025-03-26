@@ -1,59 +1,34 @@
 # Listify
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+A simple card-list application built with Angular 19, featuring a modern and responsive design for organizing and displaying card-based content.
 
-## Development server
+## Technology Stack
 
-To start a local development server, run:
+- **Framework**: Angular 19.2.0
+- **Language**: TypeScript 5.7.2
+- **Testing**: Jasmine/Karma for unit testing
+- **Linting**: ESLint with TypeScript and Prettier plugins
+- **Build Tools**: Angular CLI 19.2.4
 
-```bash
-ng serve
-```
+## Project Structure
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The project follows a modular architecture with the following structure:
 
-## Code scaffolding
+- `src/app/pages/` - Page components representing different routes/views
+- `src/app/components/` - Reusable UI components (header, footer, card, etc..)
+- `src/app/shared/models/` - TypeScript interfaces, types and models
+- `src/app/services/` - Application services and business logic
+- `src/styles/` - Global styles, variables and mixins
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Getting Started
 
-```bash
-ng generate component component-name
-```
+### Prerequisites
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Node.js (Latest LTS version recommended)
+- npm (comes with Node.js)
 
-```bash
-ng generate --help
-```
+### Installation
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Run `npm install` to install all dependencies
+2. Run `ng serve` to start the development server
+3. Run `ng test` to run all tests
