@@ -5,11 +5,10 @@ import { environment } from '../../environments/environments';
 import { Card } from '../shared/models/card';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ContentService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCardList(): Observable<Card[]> {
     return this.http.get<Card[]>(environment.CARD_LIST_URL);

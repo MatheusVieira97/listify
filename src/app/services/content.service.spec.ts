@@ -1,25 +1,27 @@
 import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { ContentService } from './content.service';
 import { environment } from '../../environments/environments';
+import { Card, CardType } from '../shared/models/card';
 
 describe('ContentService', () => {
-  const MOCK_CARDS = [
+  const MOCK_CARDS: Card[] = [
     {
-      id: 1,
       title: 'Card 1',
-      description: "Description 1",
-      image: "https://localhost/8000",
-      type: "card",
+      description: 'Description 1',
+      img: 'https://localhost:8000/image1.jpg',
+      type: CardType.Paisagem,
     },
     {
-      id: 2,
       title: 'Card 2',
-      description: "Description 2",
-      image: "https://localhost/8000",
-      type: "card",
-    }
+      description: 'Description 2',
+      img: 'https://localhost:8000/image2.jpg',
+      type: CardType.Flor,
+    },
   ];
 
   let service: ContentService;
@@ -30,8 +32,8 @@ describe('ContentService', () => {
       providers: [
         ContentService,
         provideHttpClient(),
-        provideHttpClientTesting()
-      ]
+        provideHttpClientTesting(),
+      ],
     });
     service = TestBed.inject(ContentService);
     httpMock = TestBed.inject(HttpTestingController);
@@ -46,9 +48,13 @@ describe('ContentService', () => {
   });
 
   describe('getCardList', () => {
-    it('should get card list from API', () => {
-      service.getCardList().subscribe(cards => {
-        expect(cards).toEqual(MOCK_CARDS);
+    it('should get card list from API', (done) => {
+      service.getCardList().subscribe({
+        next: (cards) => {
+          expect(cards).toEqual(MOCK_CARDS);
+          done();
+        },
+        error: done.fail
       });
 
       const req = httpMock.expectOne(environment.CARD_LIST_URL);
@@ -56,27 +62,33 @@ describe('ContentService', () => {
       req.flush(MOCK_CARDS);
     });
 
-    it('should handle API errors', () => {
+    it('should handle API errors', (done) => {
       service.getCardList().subscribe({
+        next: () => done.fail('Should have failed'),
         error: (error) => {
           expect(error.status).toBe(500);
+          done();
         }
       });
 
       const req = httpMock.expectOne(environment.CARD_LIST_URL);
       req.flush('Server error', {
         status: 500,
-        statusText: 'Internal Server Error'
+        statusText: 'Internal Server Error',
       });
     });
 
-    it('should return empty array when no cards exist', () => {
-      service.getCardList().subscribe(cards => {
-        expect(cards).toEqual([]);
+    it('should return empty array when no cards exist', (done) => {
+      service.getCardList().subscribe({
+        next: (cards) => {
+          expect(cards).toEqual([]);
+          done();
+        },
+        error: done.fail
       });
 
       const req = httpMock.expectOne(environment.CARD_LIST_URL);
       req.flush([]);
-    })
+    });
   });
 });
