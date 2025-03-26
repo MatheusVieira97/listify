@@ -1,0 +1,47 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/variables.scss';
+
+.not-found {
+    @include mixins.flex-center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: variables.$background-color;
+    text-align: center;
+    padding: 2rem;
+
+    &__title {
+        font-size: 8rem;
+        color: variables.$primary-color;
+        margin: 0;
+    }
+
+    &__subtitle {
+        font-size: 2rem;
+        color: variables.$text-color;
+        margin: 1rem 0;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        color: variables.$text-color;
+        margin-bottom: 2rem;
+    }
+
+    &__link {
+        padding: variables.$spacing-medium variables.$spacing-large;
+        background-color: variables.$primary-color;
+        color: variables.$secondary-background-color;
+        text-decoration: none;
+        border-radius: variables.$button-radius;
+        transition: variables.$transition-normal;
+
+        &:hover {
+            background-color: darken(variables.$primary-color, 10%);
+        }
+
+        &:focus {
+            outline: 2px solid variables.$focus-color;
+            outline-offset: 2px;
+        }
+    }
+}
