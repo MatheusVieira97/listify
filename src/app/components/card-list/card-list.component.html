@@ -1,7 +1,11 @@
 <div class="cards">
     <div class="cards__row">
         @for (card of cards; track card) {
-            <app-card [card]="card" class="cards__item"></app-card>
+            <app-card 
+                [card]="card" 
+                class="cards__item"
+                (deleteCard)="onDeleteCard(card)"
+            ></app-card>
         }
     </div>
 </div>

@@ -1,11 +1,55 @@
 @use '../../styles/mixins.scss';
+@use '../../styles/variables.scss';
 
 .cards {
     @include mixins.flex-center;
+    
     .cards__row {
-        @include mixins.flex-around;
+        @include mixins.flex-center;
         flex-wrap: wrap;
         align-items: flex-start;
         width: 100%;
+    }
+
+    @media (max-width: variables.$breakpoint-mobile-sm) {
+        padding: 0.5rem;
+        
+        .cards__row {
+            max-width: 280px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-mobile-sm) and (max-width: variables.$breakpoint-mobile-md) {
+        padding: 0.75rem;
+
+        .cards__row {
+            max-width: 400px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-mobile-md) and (max-width: variables.$breakpoint-tablet) {
+        padding: 1rem;
+
+        .cards__row {
+            max-width: 600px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-tablet) and (max-width: variables.$breakpoint-notebook) {
+        .cards__row {
+            max-width: 800px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-notebook) and (max-width: variables.$breakpoint-desktop) {
+        .cards__row {
+            max-width: 1000px;
+        }
+    }
+
+    @media (min-width: variables.$breakpoint-ultrawide) {
+        .cards__row {
+            max-width: 1400px;
+        }
     }
 }
