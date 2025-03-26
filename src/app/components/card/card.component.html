@@ -1,11 +1,11 @@
 <div class="card">
     <button class="card__delete-btn" aria-label="Excluir card">
-        <i class="fa-solid fa-xmark"></i>
+        <img class="card__delete-icon" src="svg_close.svg" alt="Close icon">
     </button>
     
     <div class="card__image">
         <img [src]="card.img" [alt]="card.title">
-        <span class="card__badge">{{CardType[card.type]}}</span>
+        <span class="card__badge" [class]="CardType[card.type].toLowerCase()">{{CardType[card.type]}}</span>
     </div>
 
     <div class="card__content">

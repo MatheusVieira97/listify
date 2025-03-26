@@ -1,9 +1,11 @@
 @use '../../styles/mixins.scss';
 
 .cards {
-
+    @include mixins.flex-center;
     .cards__row {
-        @include mixins.flex-center;
+        @include mixins.flex-around;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: 100%;
     }
-    
 }

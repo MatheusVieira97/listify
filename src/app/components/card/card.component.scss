@@ -1,41 +1,54 @@
 @use '../../styles/mixins.scss';
+@use '../../styles/variables.scss';
 
 .card {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
     @include mixins.box-shadow('md');
+    position: relative;
+    width: 15rem;
+    height: 25rem;
+    background-color: variables.$secondary-background-color;
+    border-radius: variables.$button-radius;
+    overflow: visible;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 
     &__delete-btn {
         position: absolute;
-        top: 8px;
-        right: 8px;
-        width: 32px;
-        height: 32px;
+        top: -0.8rem;
+        right: -0.8rem;
+        width: 2rem;
+        height: 2rem;
         border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.9);
-        @include mixins.flex-center;
+        background-color: rgba(variables.$secondary-background-color, 0.9);
+        border: 1px solid variables.$border-color;
         z-index: 1;
 
-        i {
-            font-size: 1.2rem;
-            color: #666;
+        .card__delete-icon {
+            filter: invert(54%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(92%) contrast(86%);
         }
 
         &:hover {
-            background-color: rgba(255, 255, 255, 1);
+            background-color: variables.$secondary-background-color;
+            border: 1px solid variables.$text-color;
+
+            .card__delete-icon {
+                filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(343deg) brightness(94%) contrast(101%);
+                transform: rotate(90deg);
+                transition: transform variables.$transition-normal;
+            }
         }
     }
 
     &__image {
         position: relative;
         width: 100%;
-        height: 200px;
+        height: 12.5rem;
 
         img {
+            border-radius: variables.$button-radius;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -44,30 +57,47 @@
 
     &__badge {
         position: absolute;
-        bottom: 8px;
-        left: 8px;
-        padding: 4px 8px;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white;
-        border-radius: 4px;
-        font-size: 0.9rem;
+        bottom: variables.$spacing-xs;
+        right: variables.$spacing-xs;
+        padding: calc(variables.$spacing-xs / 2) variables.$spacing-xs;
+        border-radius: calc(variables.$button-radius / 2);
+        font-size: variables.$font-small;
+        color: variables.$secondary-background-color;
+
+        &.paisagem {
+            background-color: variables.$primary-color;
+        }
+
+        &.flor {
+            background-color: variables.$secondary-color;
+        }
+
+        &.pizza {
+            background-color: variables.$tertiary-color;
+        }
     }
 
     &__content {
-        padding: 16px;
-        height: 200px;
+        padding: variables.$spacing-small;
+        height: 12.5rem;
         overflow-y: auto;
     }
 
     &__title {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-        font-weight: bold;
+        font-size: calc(variables.$font-xxl);
+        margin-bottom: variables.$spacing-xs;
+        font-weight: 400;
     }
 
     &__description {
-        color: #666;
-        line-height: 1.4;
+        color: variables.$text-color;
+        line-height: 1.2;
         overflow-wrap: break-word;
+        display: -webkit-box;
+        line-clamp: 6;  
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

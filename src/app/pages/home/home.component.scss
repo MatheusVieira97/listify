@@ -9,14 +9,14 @@
 
 .search {
     @include mixins.flex-center;
-    padding: 2.3rem;
-
+    padding: 3rem;
 
     &__container {
         @include mixins.flex-center;
         background-color: variables.$secondary-background-color;
         border: 1px solid variables.$border-color;
         border-radius: variables.$button-radius;
+        position: relative;
 
         &:focus {
             border-color: variables.$focus-color;
@@ -34,6 +34,9 @@
         border: none;
         outline: none;
         border-radius: variables.$button-radius;
+        appearance: none;
+        -webkit-appearance: none;
+
         &::-webkit-search-cancel-button {
             -webkit-appearance: none;
         }
@@ -54,6 +57,10 @@
         border-top-right-radius: variables.$button-radius;
         border-bottom-right-radius: variables.$button-radius;
         min-width: 50px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
     
         &:focus {
             border-color: none;
@@ -65,15 +72,15 @@
     }
 
     &__container:hover &__button {
-        border-left: 2px solid variables.$hover-color;
+        border-left: 3px solid variables.$hover-color;
     }
 
     &__container:focus-within &__button {
-        border-left: 2px solid variables.$focus-color;
+        border-left: 3px solid variables.$focus-color;
     }
 
     &__container:focus-within {
-        border-color: variables.$focus-color;
+        border: 3px solid variables.$focus-color;
     }
 
     &__icon {
