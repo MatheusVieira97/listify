@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './divider.component.html',
-  styleUrl: './divider.component.scss'
+  styleUrl: './divider.component.scss',
 })
 export class DividerComponent {
   @Input() size: string = 'small';
