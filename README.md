@@ -6,6 +6,7 @@ A simple card-list application built with Angular 19, featuring a modern and res
 
 - **Framework**: Angular 19.2.0
 - **Language**: TypeScript 5.7.2
+- **Styling**: SASS with BEM methodology
 - **Testing**: Jasmine/Karma for unit testing
 - **Linting**: ESLint with TypeScript and Prettier plugins
 - **Build Tools**: Angular CLI 19.2.4
